@@ -4,36 +4,58 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>TypeScript Form</title>
 		<link rel="stylesheet" href="styles.css" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Roboto+Serif:wght@600&family=Work+Sans:ital,wght@0,300;0,400;1,300&display=swap"
+			rel="stylesheet"
+		/>
 	</head>
 	<body>
-		<header class="wrapper">
+		<header class="header fixed-width">
 			<h1>Sign Up Form</h1>
-			<button class="switch" aria-label="Toggle night mode">
-				<span class="btn-inner"></span>
+			<button class="switch" aria-label="Toggle dark mode">
+				<span class="btn-inner">
+					<span class="clicker"></span>
+				</span>
 			</button>
+			<div class="switch-text">Switch</div>
 		</header>
 
-		<main>
+		<main class="main fixed-width">
 			<form class="form">
 				<div class="input">
-					<label for="name">Name</label>
-					<input type="text" name="name" id="name" />
+					<div class="field">
+						<label for="name">Name</label>
+						<input type="text" name="name" id="name" />
+					</div>
+					<div class="error"></div>
 				</div>
 				<div class="input">
-					<label for="email">Email</label>
-					<input type="text" name="email" id="email" />
+					<div class="field">
+						<label for="email">Email</label>
+						<input type="text" name="email" id="email" />
+					</div>
+					<div class="error"></div>
 				</div>
 				<div class="input">
-					<label for="password">Password</label>
-					<input type="text" name="password" id="password" />
+					<div class="field">
+						<label for="password">Password</label>
+						<input type="text" name="password" id="password" />
+					</div>
+					<div class="error"></div>
 				</div>
 				<div class="input">
-					<label for="confirmPassword">Confirm Password</label>
-					<input
-						type="text"
-						name="confirmPassword"
-						id="confirmPassword"
-					/>
+					<div class="field">
+						<label for="confirmPassword">Confirm Password</label>
+						<input
+							type="text"
+							name="confirmPassword"
+							id="confirmPassword"
+						/>
+					</div>
+					<div class="error"></div>
 				</div>
 				<div class="submit">
 					<button type="submit">Sign Up</button>
@@ -41,7 +63,7 @@
 			</form>
 		</main>
 
-		<footer>
+		<footer class="footer fixed-width">
 			<a
 				href="https://github.com/cuneytakcay/typescript-form"
 				target="_blank"
