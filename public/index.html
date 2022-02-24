@@ -7,11 +7,38 @@
 	</head>
 	<body>
 		<header class="wrapper">
-			<h1>User Create Form</h1>
+			<h1>Sign Up Form</h1>
+			<button class="switch" aria-label="Toggle night mode">
+				<span class="btn-inner"></span>
+			</button>
 		</header>
 
 		<main>
-			<form class="form"></form>
+			<form class="form">
+				<div class="input">
+					<label for="name">Name</label>
+					<input type="text" name="name" id="name" />
+				</div>
+				<div class="input">
+					<label for="email">Email</label>
+					<input type="text" name="email" id="email" />
+				</div>
+				<div class="input">
+					<label for="password">Password</label>
+					<input type="text" name="password" id="password" />
+				</div>
+				<div class="input">
+					<label for="confirmPassword">Confirm Password</label>
+					<input
+						type="text"
+						name="confirmPassword"
+						id="confirmPassword"
+					/>
+				</div>
+				<div class="submit">
+					<button type="submit">Sign Up</button>
+				</div>
+			</form>
 		</main>
 
 		<footer>
