@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
@@ -24,11 +25,18 @@
 		</header>
 
 		<main class="main fixed-width">
-			<form class="form">
+			<form class="form" autocomplete="off">
 				<div class="input">
 					<div class="field">
-						<label for="name">Name</label>
-						<input type="text" name="name" id="name" />
+						<label for="firstName">First Name</label>
+						<input type="text" name="firstName" id="firstName" />
+					</div>
+					<div class="error"></div>
+				</div>
+				<div class="input">
+					<div class="field">
+						<label for="lastName">Last Name</label>
+						<input type="text" name="lastName" id="lastName" />
 					</div>
 					<div class="error"></div>
 				</div>
@@ -42,7 +50,7 @@
 				<div class="input">
 					<div class="field">
 						<label for="password">Password</label>
-						<input type="text" name="password" id="password" />
+						<input type="password" name="password" id="password" />
 					</div>
 					<div class="error"></div>
 				</div>
@@ -50,7 +58,7 @@
 					<div class="field">
 						<label for="confirmPassword">Confirm Password</label>
 						<input
-							type="text"
+							type="password"
 							name="confirmPassword"
 							id="confirmPassword"
 						/>
