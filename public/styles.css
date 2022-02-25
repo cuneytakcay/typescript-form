@@ -20,21 +20,29 @@ body,
 }
 
 body {
-	--orange: rgb(247, 196, 102);
-	--red: rgb(206, 74, 74);
-	--hover-red: rgb(197, 53, 53);
-	--white: rgb(200, 200, 200);
-	--black: rgb(51, 48, 48);
+	--lighter-color: rgb(247, 196, 102);
+	--darker-color: rgb(206, 74, 74);
+	--hover-color: rgb(197, 53, 53);
+	--lightest: rgb(200, 200, 200);
+	--darkest: rgb(51, 48, 48);
 
-	background: linear-gradient(var(--orange), var(--red));
+	background: linear-gradient(var(--lighter-color), var(--darker-color));
 	display: flex;
 	flex-direction: column;
 	min-height: 100vh;
 	font-family: var(--font-body);
 	font-size: 18px;
 	font-weight: var(--font-light);
-	color: var(--black);
+	color: var(--darkest);
 	line-height: 1.4;
+}
+
+body.dark {
+	--lighter-color: rgb(171, 15, 202);
+	--darker-color: rgb(46, 2, 54);
+	--hover-color: rgb(7, 3, 8);
+	--darkest: rgb(200, 200, 200);
+	--lightest: rgb(51, 48, 48);
 }
 
 .fixed-width {
@@ -54,7 +62,7 @@ body {
 	font-family: var(--font-title);
 	font-size: var(--size-xl);
 	font-weight: var(--font-bold);
-	color: var(--red);
+	color: var(--darker-color);
 	line-height: 1.4;
 	margin-bottom: 30px;
 }
@@ -65,7 +73,7 @@ body {
 	padding: 5px;
 	border: none;
 	border-radius: 16px;
-	background-color: var(--red);
+	background-color: var(--darker-color);
 	cursor: pointer;
 }
 
@@ -73,7 +81,7 @@ body {
 	height: 100%;
 	width: 100%;
 	border-radius: 16px;
-	background-color: var(--hover-red);
+	background-color: var(--hover-color);
 	display: block;
 	position: relative;
 	overflow: hidden;
@@ -83,11 +91,16 @@ body {
 	width: 20px;
 	height: 20px;
 	border-radius: 16px;
-	background-color: var(--orange);
+	background-color: var(--lighter-color);
 	position: absolute;
-	right: 0;
+	right: 1px;
 	top: 0;
-	box-shadow: 0 0 5px var(--black);
+	box-shadow: 0 0 5px var(--darkest);
+	transition: all 0.1s ease;
+}
+
+.dark .header .switch .clicker {
+	right: calc(100% - 21px);
 }
 
 .header .switch-text {
@@ -109,7 +122,7 @@ body {
 	margin: 0 auto;
 	padding: 30px 20px;
 	border-radius: 6px;
-	box-shadow: 0 10px 20px -10px var(--black);
+	box-shadow: 0 10px 20px -10px rgb(51, 48, 48);
 }
 
 .form .input .field {
@@ -146,14 +159,14 @@ body {
 	border: none;
 	font-family: var(--font-title);
 	font-size: var(--size-regular);
-	color: var(--white);
-	background-color: var(--red);
+	color: rgb(200, 200, 200);
+	background-color: var(--darker-color);
 	cursor: pointer;
-	transition: background-color 0.5s ease;
 }
 
 .form .submit button:hover {
-	background-color: var(--hover-red);
+	background-color: var(--hover-color);
+	transition: background-color 0.3s ease;
 }
 
 .footer {
@@ -165,7 +178,7 @@ body {
 a {
 	font-family: var(--font-body);
 	font-weight: var(--font-medium);
-	color: var(--black);
+	color: var(--darkest);
 	text-decoration: none;
 }
 
