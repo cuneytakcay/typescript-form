@@ -1,11 +1,14 @@
 const root: HTMLElement | null = document.getElementById('root')
-const switchBtn: HTMLElement | null = document.querySelector('.switch')
 
-if (root && switchBtn) {
+if (root) {
 	const verifiedRoot: HTMLElement = root
-	const verifiedSwitchBtn: HTMLElement = switchBtn
+	const switchBtn: HTMLElement | null = root.querySelector('.switch')
 
-	verifiedSwitchBtn.addEventListener('click', () => {
-		verifiedRoot.classList.toggle('dark')
-	})
+	if (switchBtn) {
+		const verifiedSwitchBtn: HTMLElement = switchBtn
+
+		verifiedSwitchBtn.addEventListener('click', () => {
+			verifiedRoot.classList.toggle('dark')
+		})
+	}
 }
