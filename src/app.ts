@@ -78,7 +78,7 @@ submit.addEventListener('click', e => {
 			?.querySelector('.error') as HTMLDivElement
 		errorCont.innerHTML = ''
 	}
-    // Must match the password
+	// Must match the password
 	if (confirmPassword.value !== password.value) {
 		errorCont = confirmPassword
 			.closest('.input')
@@ -91,4 +91,19 @@ submit.addEventListener('click', e => {
 			?.querySelector('.error') as HTMLDivElement
 		errorCont.innerHTML = ''
 	}
+})
+
+// When the input field is focused, or filled, move the labels out
+const inputs = root.querySelectorAll<HTMLInputElement>('input')
+
+inputs.forEach(input => {
+	const parent = input.parentNode as HTMLDivElement
+
+	input.addEventListener('focus', () => {
+		parent.classList.add('moved-label')
+	})
+
+	input.addEventListener('blur', e => {
+		if (input.value === '') parent.classList.remove('moved-label')
+	})
 })

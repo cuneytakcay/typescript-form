@@ -77,3 +77,15 @@ submit.addEventListener('click', function (e) {
         errorCont.innerHTML = '';
     }
 });
+// When the input field is focused, or filled, move the labels out
+var inputs = root.querySelectorAll('input');
+inputs.forEach(function (input) {
+    var parent = input.parentNode;
+    input.addEventListener('focus', function () {
+        parent.classList.add('moved-label');
+    });
+    input.addEventListener('blur', function (e) {
+        if (input.value === '')
+            parent.classList.remove('moved-label');
+    });
+});

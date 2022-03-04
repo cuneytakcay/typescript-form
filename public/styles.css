@@ -127,17 +127,24 @@ body.dark {
 
 .form .input .field {
 	position: relative;
-	padding: 8px 0;
+	padding: 10px 0;
 }
 
 .form .input label {
 	position: absolute;
-	top: -5px;
-	left: 5px;
+	top: 50%;
+	transform: translateY(-50%);
+	left: 10px;
 	font-family: var(--font-body);
 	font-size: var(--size-sm);
 	font-style: italic;
 	pointer-events: none;
+	transition: all 0.2s ease;
+}
+
+.form .input .field.moved-label label {
+	top: 0;
+	left: 2px;
 }
 
 .form .input input {
@@ -184,7 +191,7 @@ body.dark {
 	border-radius: 6px;
 	border: none;
 	font-family: var(--font-title);
-	font-size: var(--size-regular);
+	font-size: var(--size-sm);
 	color: rgb(200, 200, 200);
 	background-color: var(--darker-color);
 	cursor: pointer;
