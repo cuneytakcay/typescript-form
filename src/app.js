@@ -16,6 +16,7 @@ var errorCont;
 submit.addEventListener('click', function (e) {
     var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
     e.preventDefault();
+    // First name cannot be empty
     if (firstName.value.trim() === '') {
         errorCont = (_a = firstName
             .closest('.input')) === null || _a === void 0 ? void 0 : _a.querySelector('.error');
@@ -27,6 +28,7 @@ submit.addEventListener('click', function (e) {
             .closest('.input')) === null || _b === void 0 ? void 0 : _b.querySelector('.error');
         errorCont.innerHTML = '';
     }
+    // Last name cannot be empty
     if (lastName.value.trim() === '') {
         errorCont = (_c = lastName
             .closest('.input')) === null || _c === void 0 ? void 0 : _c.querySelector('.error');
@@ -38,6 +40,7 @@ submit.addEventListener('click', function (e) {
             .closest('.input')) === null || _d === void 0 ? void 0 : _d.querySelector('.error');
         errorCont.innerHTML = '';
     }
+    // Must be a valid email address
     if (!email.value.match(/\S+@\S+\.\S+/)) {
         errorCont = (_e = email
             .closest('.input')) === null || _e === void 0 ? void 0 : _e.querySelector('.error');
@@ -49,6 +52,7 @@ submit.addEventListener('click', function (e) {
             .closest('.input')) === null || _f === void 0 ? void 0 : _f.querySelector('.error');
         errorCont.innerHTML = '';
     }
+    // Must be at least 6 characters long, include at least one number and one special character
     if (!password.value.match(/^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{6,}$/)) {
         errorCont = (_g = password
             .closest('.input')) === null || _g === void 0 ? void 0 : _g.querySelector('.error');
@@ -60,6 +64,7 @@ submit.addEventListener('click', function (e) {
             .closest('.input')) === null || _h === void 0 ? void 0 : _h.querySelector('.error');
         errorCont.innerHTML = '';
     }
+    // Must match the password
     if (confirmPassword.value !== password.value) {
         errorCont = (_j = confirmPassword
             .closest('.input')) === null || _j === void 0 ? void 0 : _j.querySelector('.error');

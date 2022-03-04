@@ -22,6 +22,7 @@ let errorCont: HTMLDivElement
 submit.addEventListener('click', e => {
 	e.preventDefault()
 
+	// First name cannot be empty
 	if (firstName.value.trim() === '') {
 		errorCont = firstName
 			.closest('.input')
@@ -34,7 +35,7 @@ submit.addEventListener('click', e => {
 			?.querySelector('.error') as HTMLDivElement
 		errorCont.innerHTML = ''
 	}
-
+	// Last name cannot be empty
 	if (lastName.value.trim() === '') {
 		errorCont = lastName
 			.closest('.input')
@@ -47,7 +48,7 @@ submit.addEventListener('click', e => {
 			?.querySelector('.error') as HTMLDivElement
 		errorCont.innerHTML = ''
 	}
-
+	// Must be a valid email address
 	if (!email.value.match(/\S+@\S+\.\S+/)) {
 		errorCont = email
 			.closest('.input')
@@ -60,7 +61,7 @@ submit.addEventListener('click', e => {
 			?.querySelector('.error') as HTMLDivElement
 		errorCont.innerHTML = ''
 	}
-
+	// Must be at least 6 characters long, include at least one number and one special character
 	if (
 		!password.value.match(
 			/^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{6,}$/
@@ -77,7 +78,7 @@ submit.addEventListener('click', e => {
 			?.querySelector('.error') as HTMLDivElement
 		errorCont.innerHTML = ''
 	}
-
+    // Must match the password
 	if (confirmPassword.value !== password.value) {
 		errorCont = confirmPassword
 			.closest('.input')
