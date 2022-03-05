@@ -18,6 +18,7 @@ const confirmPassword = form.querySelector(
 ) as HTMLInputElement
 const submit = form.querySelector('[type="submit"]') as HTMLButtonElement
 let errorCont: HTMLDivElement
+let hasError: boolean = false
 
 submit.addEventListener('click', e => {
 	e.preventDefault()
@@ -94,13 +95,16 @@ submit.addEventListener('click', e => {
 })
 
 // When the input field is focused, or filled, move the labels out
+// clear error for that field if it exists
 const inputs = root.querySelectorAll<HTMLInputElement>('input')
 
 inputs.forEach(input => {
 	const parent = input.parentNode as HTMLDivElement
+	const errorContainers = root.querySelectorAll<HTMLDivElement>('.error')
 
 	input.addEventListener('focus', () => {
 		parent.classList.add('moved-label')
+		errorContainers.forEach(cont => (cont.innerHTML = ''))
 	})
 
 	input.addEventListener('blur', e => {

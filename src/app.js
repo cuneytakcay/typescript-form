@@ -13,6 +13,7 @@ var password = form.querySelector('[name="password"]');
 var confirmPassword = form.querySelector('[name="confirmPassword"]');
 var submit = form.querySelector('[type="submit"]');
 var errorCont;
+var hasError = false;
 submit.addEventListener('click', function (e) {
     var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
     e.preventDefault();
@@ -78,11 +79,14 @@ submit.addEventListener('click', function (e) {
     }
 });
 // When the input field is focused, or filled, move the labels out
+// clear error for that field if it exists
 var inputs = root.querySelectorAll('input');
 inputs.forEach(function (input) {
     var parent = input.parentNode;
+    var errorContainers = root.querySelectorAll('.error');
     input.addEventListener('focus', function () {
         parent.classList.add('moved-label');
+        errorContainers.forEach(function (cont) { return (cont.innerHTML = ''); });
     });
     input.addEventListener('blur', function (e) {
         if (input.value === '')
