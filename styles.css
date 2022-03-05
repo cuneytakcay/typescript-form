@@ -172,12 +172,13 @@ body.dark {
 	padding: 10px;
 	border: 1px solid var(--darker-color);
 	border-radius: 6px;
-	background-color: rgb(206 74 74 / 40%);
+	background-color: rgb(206 74 74 / 50%);
 }
 
 .form .input .error-inner p,
 .form .input .error-inner li {
 	font-size: 0.75em;
+	font-weight: 400;
 	color: var(--lightest);
 	line-height: 1.4;
 }
