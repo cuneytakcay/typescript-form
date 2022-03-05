@@ -180,7 +180,10 @@ body.dark {
 	font-size: 0.75em;
 	font-weight: 400;
 	color: var(--lightest);
-	line-height: 1.4;
+	line-height: 1.5;
+	display: flex;
+	align-items: center;
+	gap: 5px;
 }
 
 .form .input .error-inner span {
