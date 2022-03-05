@@ -165,6 +165,7 @@ body.dark {
 .form .input input:-webkit-autofill {
 	-webkit-box-shadow: 0 0 0 50px var(--input-bg) inset;
 	box-shadow: 0 0 0 50px var(--input-bg) inset;
+	-webkit-text-fill-color: var(--input-color);
 }
 
 .form .input .error-inner {
